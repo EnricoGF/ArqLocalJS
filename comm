@@ -1,0 +1,18 @@
+whoami- usuario
+echo- printa
+clear- limpa
+pwd- diretorio q ta trabalhando
+ls- lista aquivos e diretorios
+cd- muda o diretorio q esta
+mkdir- cria diretorio
+touch- cria arquivo
+rm- remove
+mv- move
+cp- copia
+cat- concatenar, exibe o arquivo inteiro
+head- exibe de cima p baixo
+tail- exibe de baixo p cima
+grep- pesquisa no arquivo
+
+head -n 10 .txt | -n 5 .txt
+esc esc :q
