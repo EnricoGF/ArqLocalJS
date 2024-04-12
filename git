@@ -1,0 +1,19 @@
+git branch
+	git branch (nome da branch)= cria nova branch
+git checkout (nome da branch)
+	git checkout -b (nome da branch)=cria e acessa uma nova branch
+git close
+git clone (url)
+
+
+git status
+git add (nome do arquivo)
+	git add --all = adiciona todos arquivos dentro do repositorio
+git commit -m "mensgagem"
+git log
+
+
+git push origin (nome da branch)= atualiza a branch em questão no seu repositório local
+git pull
+
+git config --global user.name

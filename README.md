@@ -1,2 +1,0 @@
-# ArqLocal
-arquivos locais senac
