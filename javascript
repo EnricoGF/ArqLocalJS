@@ -18,3 +18,4 @@ typeof nomeVariavel -> mostra o tipo do valor (string/ number/ boolean/ undefine
 
 nomeVariavel = null -> valor nulo da variavel (precisa ser atribuido)
 
+alert("olá "+ variavel) -> alerta de frase
