@@ -21,10 +21,7 @@ nomeVariavel = null -> valor nulo da variavel (precisa ser atribuido)
 
 alert("olá "+ variavel) -> alerta de frase
 
-{
-let a = 10
-let b = 10
-
+//////////////////////////////////operadores lógicos
 let soma = a + b -> soma a + b
 let subtracao = a - b -> subtrai a - b
 let multiplicacao = a * b -> multiplica a * b
@@ -41,7 +38,7 @@ a %= b -> a = a % b
 a++ -> incrementa 1 (a + 1)
 a-- -> decrementa 1 (a - 1)
 
-//comparadores -> resultados booleanos (true/false)
+//////////////////////////////////comparadores -> resultados booleanos (true/false)
 a == b -> igual (compara somente valor)
 a === b -> estritamente igual (compara tipo e valor)
 a!== b -> diferente //quando são diferentes = true
@@ -54,5 +51,25 @@ a <= b -> menor ou igual
 || -> OR // true || false = resultado true
 ! -> NOT // !true = resultado false
 
+////////////////////////////////strings
+let string = `meu nome é ${variavel} e gosto da cor ${variavel2}`
+// let string "meu nome é " + fulano + " é " + cor
 
-}
+const frase = "OieEeEee"
+const fraseMinuscula = frase.toLowerCase() -> oieeeeee
+const fraseMaiuscula = frase.toUpperCase() -> OIEEEEEE
+const fraseTamanho = frase.length -> 8
+const fraseSemEspaco = frase.trim() -> remove os espaços da frente e de tras da string: "   texto ".trim() = "texto"
+
+const pesquisaOie = frase.includes("Oie") -> true //pesquisa dentro da string
+const replaceOie = frase.replaceAll("Oie","tchau") -> tchauEeEee //troca o texto da string original para outro texto
+
+///////////////////////////////arrays
+const lista = ["item 0", 42, variavel, true]
+const terceiroItem = lista[3] -> retorna variavel
+const listaTamanho = lista.length -> tamanho da array
+const item0 = lista.includes("item 0") -> true //pesquisa na array
+lista.push("item 4") -> insere um novo elemento na array
+const ultimoItem = lista.pop -> remove o ultimo elemento da array e salva em ultimoItem esse elemento
+letras.splice(2, 1) -> vai até o elemento 2 e remove 1 elemento
+
