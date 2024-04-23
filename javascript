@@ -72,4 +72,4 @@ const item0 = lista.includes("item 0") -> true //pesquisa na array
 lista.push("item 4") -> insere um novo elemento na array
 const ultimoItem = lista.pop -> remove o ultimo elemento da array e salva em ultimoItem esse elemento
 letras.splice(2, 1) -> vai até o elemento 2 e remove 1 elemento
-
+	letras.splice(1, 1, "texto") -> vai até o elemento 1, remove 1 elemento e adiciona "texto" no lugar deste elemento removido
