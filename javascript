@@ -1,3 +1,5 @@
+////////////////////////////////////variáveis
+
 console.log("texto") -> printa no console   \n -> shift enter
 
 prompt("pergunta") -> pede resposta
@@ -22,6 +24,7 @@ nomeVariavel = null -> valor nulo da variavel (precisa ser atribuido)
 alert("olá "+ variavel) -> alerta de frase
 
 //////////////////////////////////operadores lógicos
+
 let soma = a + b -> soma a + b
 let subtracao = a - b -> subtrai a - b
 let multiplicacao = a * b -> multiplica a * b
@@ -39,6 +42,7 @@ a++ -> incrementa 1 (a + 1)
 a-- -> decrementa 1 (a - 1)
 
 //////////////////////////////////comparadores -> resultados booleanos (true/false)
+
 a == b -> igual (compara somente valor)
 a === b -> estritamente igual (compara tipo e valor)
 a!== b -> diferente //quando são diferentes = true
@@ -52,6 +56,7 @@ a <= b -> menor ou igual
 ! -> NOT // !true = resultado false
 
 ////////////////////////////////strings
+
 let string = `meu nome é ${variavel} e gosto da cor ${variavel2}`
 // let string "meu nome é " + fulano + " é " + cor
 
@@ -65,6 +70,7 @@ const pesquisaOie = frase.includes("Oie") -> true //pesquisa dentro da string
 const replaceOie = frase.replaceAll("Oie","tchau") -> tchauEeEee //troca o texto da string original para outro texto
 
 ///////////////////////////////arrays
+
 const lista = ["item 0", 42, variavel, true]
 const terceiroItem = lista[3] -> retorna variavel
 const listaTamanho = lista.length -> tamanho da array
@@ -73,3 +79,16 @@ lista.push("item 4") -> insere um novo elemento na array
 const ultimoItem = lista.pop -> remove o ultimo elemento da array e salva em ultimoItem esse elemento
 letras.splice(2, 1) -> vai até o elemento 2 e remove 1 elemento
 	letras.splice(1, 1, "texto") -> vai até o elemento 1, remove 1 elemento e adiciona "texto" no lugar deste elemento removido
+
+///////////////////////////////funções
+
+function calculaArea(altura, largura) { // nome da função, com os parâmetros
+	const area = altura * largura //código a ser executado
+	console.log(area)
+
+}
+calculaArea(2, 3) //chamada da função, com argumentos
+
+	////////////////////////RETURN
+	return variavel -> retorna para função o valor atribuído à variável 
+
