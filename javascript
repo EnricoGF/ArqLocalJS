@@ -92,3 +92,27 @@ calculaArea(2, 3) //chamada da função, com argumentos
 	////////////////////////RETURN
 	return variavel -> retorna para função o valor atribuído à variável 
 
+//////////////////////////////objeto
+
+const professor = {
+	nome: "Vitor",
+	idade: 27,
+	tarefas: ["Dar aula", "Responder dúvidas"],
+	textoFuncao: function() {
+		console.log ("texto")
+	},
+}
+console.log (professor.idade)
+professor.nome = "João" -> muda o valor de professor.nome
+professor.pet = ->cria um novo objeto pet dentro do objeto professor
+{
+	nome: "Jack",
+	raca: "Dalmata",
+}
+const novoObj = {
+	chave: "valor",
+	...professor,        -> spread de objeto, copia um outro objeto
+	idade: 45            -> altera o valor de idade em novoObj
+}
+
+
