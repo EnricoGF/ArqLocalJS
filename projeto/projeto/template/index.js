@@ -60,12 +60,10 @@ function sair() {
 	console.log("Tchau! Para reiniciar, atualize a aba do navegador.")
 }
 
-
 //Função de resposta inválida
 function invalido() {
 	console.log(`Opção inválida, tente novamente!`)
 }
-
 
 // Loop para perguntar ao usuário
 while (continuar) {
