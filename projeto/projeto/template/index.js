@@ -22,36 +22,37 @@ function cadastrar() { //pronto
 
 	dados.push(objeto)
 	index++
-
-	//return `Nome: ${objeto.nome} \nIdade: ${objeto.idade} \nPeso: ${objeto.peso} \nTipo sanguíneo: ${objeto.sangue} \nÚltima doação: ${objeto.doacao}`
 }
 
 // Função para listar
-function listar() { //falta embelezar
-	for(let dado of dados){
-		console.log(dado)
+function listar() {
+	for (let dado of dados) {
+		console.log("Nome:", dado.nome, "\nIdade:", dado.idade, "\nPeso:", dado.peso, "\nTipo sanguíneo:", dado.sangue, "\nÚltima doação:", dado.doacao)
 	}
 }
 
 // Função para buscar tipo sanguineo
-function buscarTipo() { //não funciona
-	let tipoInse = prompt("Por que tipo sanguíneo gostaria de procurar?")
+function buscarTipo() {
+	let tipoInserido = prompt("Por que tipo sanguíneo gostaria de procurar?").toUpperCase()
 
-	if(dados.sangue==tipoInse){
-		console.log(dados.sangue)
-	}
-
-	else{
-		console.log("Não temos nenhum doador com esse tipo sangúineo")
+	for (let dado of dados) {
+		if (dado.sangue == tipoInserido) {
+			console.log("Nome:", dado.nome, "\nIdade:", dado.idade, "\nPeso:", dado.peso, "\nTipo sanguíneo:", dado.sangue, "\nÚltima doação:", dado.doacao)
+		}
 	}
 }
-
 
 // Função para buscar
 function buscarData() {
-	console.log("Função de busca por data da última doação")
+	let dataInserida = prompt("Por que data gostaria de procurar?")
+	
+	for (let dado of dados) {
+		if (dado.doacao == dataInserida) {
+				console.log("Nome:", dado.nome, "\nIdade:", dado.idade, "\nPeso:", dado.peso, "\nTipo sanguíneo:", dado.sangue, "\nÚltima doação:", dado.doacao)
+			}
+	}
+	
 }
-
 
 // Função para sair
 function sair() {
@@ -61,7 +62,7 @@ function sair() {
 
 
 //Função de resposta inválida
-function invalido(){
+function invalido() {
 	console.log(`Opção inválida, tente novamente!`)
 }
 
