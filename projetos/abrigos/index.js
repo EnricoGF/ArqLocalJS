@@ -1,7 +1,7 @@
 // Definições básicas
 let continuar = true
 const dados = []
-let index = 1
+let index = 0
 
 // Função para cadastro
 function cadastrar() {
@@ -9,6 +9,7 @@ function cadastrar() {
 	let enderecoUser = prompt(`Qual o endereço do abrigo?`).toUpperCase()
 	let telefoneUser = Number(prompt(`Qual o telefone do abrigo`))
 	let capacidadeUser = Number(prompt(`Qual a capacidade máxima do abrigo?`))
+	index++
 
 	let objeto = {
 		index: index,
@@ -19,8 +20,7 @@ function cadastrar() {
 	}
 
 	dados.push(objeto)
-	index++
-
+	
 	console.log("----Dados cadastrados com sucesso----")
 	console.log(`Nome: ${objeto.nome} || Endereço: ${objeto.endereco} || Telefone: ${objeto.telefone} || Capacidade: ${objeto.capacidade}`)
 }
@@ -30,6 +30,9 @@ function listar() {
 	console.log(`----Função listar abrigos----`)
 	for (let dado of dados) {
 		console.log(`${dado.index} || Nome: ${dado.nome} || Endereço: ${dado.endereco} || Telefone: ${dado.telefone} || Capacidade: ${dado.capacidade}`)
+	}
+	if(index == 0){
+		console.log("Nenhum abrigo foi cadastrado ainda")
 	}
 }
 
