@@ -1,7 +1,7 @@
 // Definições básicas
 let continuar = true
-let index = 1
 const dados = []
+let index = 0
 
 // Função para cadastro
 function cadastrar() {
@@ -10,6 +10,7 @@ function cadastrar() {
 	let pesoUser = Number(prompt("Qual o seu peso?"))
 	let sangueUser = prompt("Qual o seu tipo sanguíneo?").toUpperCase()
 	let doacaoUser = prompt("Quando foi sua última doação de sangue? DD/MM/AAAA")
+	index++
 
 	let objeto = {
 		index: index,
@@ -19,46 +20,59 @@ function cadastrar() {
 		sangue: sangueUser,
 		doacao: doacaoUser
 	}
-
 	dados.push(objeto)
-	index++
 
-	console.log("Dados inseridos com sucesso!")
-	console.log("Nome:", objeto.nome, "||Idade:", objeto.idade, "||Peso:", objeto.peso, "||Tipo sanguíneo:", objeto.sangue, "||Última doação:", objeto.doacao)
+	console.log("----Dados cadastrados com sucesso----")
+	console.log(`${objeto.index} || Nome: ${objeto.nome} || Idade: ${objeto.idade} || Peso: ${objeto.peso} || Tipo sanguíneo: ${objeto.sangue} || Última doação: ${objeto.doacao}`)
 }
 
 // Função para listar dados
 function listar() {
-	console.log("----Função lista dados----")
+	console.log("----Função listar doadores----")
 
 	for (let dado of dados) {
-		console.log("Nome:", dado.nome, "||Idade:", dado.idade, "||Peso:", dado.peso, "||Tipo sanguíneo:", dado.sangue, "||Última doação:", dado.doacao)
+		console.log(`${dado.index} || Nome: ${dado.nome} || Idade: ${dado.idade} || Peso: ${dado.peso} || Tipo sanguíneo: ${dado.sangue} || Última doação: ${dado.doacao}`)
+	}
+	if(index == 0){
+		console.log("Nenhum doador foi cadastrado ainda")
 	}
 }
 
 // Função para buscar tipo sanguineo
 function buscarTipo() {
 	let tipoInserido = prompt("Por que tipo sanguíneo gostaria de procurar?").toUpperCase()
+	let aux = 0
 
-	console.log("----Função busca tipo sanguíneo----")
+	console.log(`----Função buscar tipo sanguíneo----\nBuscas para ${tipoInserido}\nResultados:`)
 
 	for (let dado of dados) {
 		if (dado.sangue == tipoInserido) {
-			console.log("Nome:", dado.nome, "||Idade:", dado.idade, "||Peso:", dado.peso, "||Tipo sanguíneo:", dado.sangue, "||Última doação:", dado.doacao)
+			console.log(`${dado.index} || Nome: ${dado.nome} || Idade: ${dado.idade} || Peso: ${dado.peso} || Tipo sanguíneo: ${dado.sangue} || Última doação: ${dado.doacao}`)
+			aux++
 		}
+	}
+	
+	if (aux == 0) {
+		console.log("Não achamos nenhum doador com esse tipo sanguíneo.")
 	}
 }
 
 // Função para buscar
 function buscarData() {
-	let dataInserida = prompt("Por que ano gostaria de procurar?")
+	let dataInserida = Number(prompt("Por que ano gostaria de procurar?"))
+	let aux = 0
 
-	console.log("----Função busca data----")
+	console.log(`----Função buscar data----\nBuscas para ${dataInserida}\nResultados:`)
 
 	for (let dado of dados) {
 		if (dado.doacao.includes(dataInserida)) {
-			console.log("Nome:", dado.nome, "//Idade:", dado.idade, "//Peso:", dado.peso, "//Tipo sanguíneo:", dado.sangue, "//Última doação:", dado.doacao)
+			console.log(`${dado.index} || Nome: ${dado.nome} || Idade: ${dado.idade} || Peso: ${dado.peso} || Tipo sanguíneo: ${dado.sangue} || Última doação: ${dado.doacao}`)
+		aux++
 		}
+	}
+
+	if (aux == 0) {
+		console.log("Não achamos nenhum doador nesta data.")
 	}
 }
 
