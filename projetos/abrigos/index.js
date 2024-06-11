@@ -1,7 +1,7 @@
 // Definições básicas
 let continuar = true
-let index = 1
 const dados = []
+let index = 1
 
 // Função para cadastro
 function cadastrar() {
@@ -20,23 +20,35 @@ function cadastrar() {
 
 	dados.push(objeto)
 	index++
+
+	console.log("----Dados cadastrados com sucesso----")
+	console.log(`Nome: ${objeto.nome} || Endereço: ${objeto.endereco} || Telefone: ${objeto.telefone} || Capacidade: ${objeto.capacidade}`)
 }
 
 // Função para listar
 function listar() {
+	console.log(`----Função listar abrigos----`)
 	for (let dado of dados) {
-		console.log("Nome:", dado.nome, "\nEndereço:", dado.endereco, "\nTelefone:", dado.telefone, "\nCapacidade:", dado.capacidade)
+		console.log(`${dado.index} || Nome: ${dado.nome} || Endereço: ${dado.endereco} || Telefone: ${dado.telefone} || Capacidade: ${dado.capacidade}`)
 	}
 }
 
 // Função para buscar abrigo
 function buscar() {
 	let cidadeInserida = prompt("Por qual cidade gostaria de procurar por um abrigo?").toUpperCase()
+	let aux = 0
+
+	console.log(`----Função buscar abrigo----\nBuscas para ${cidadeInserida}\nResultados:`)
 
 	for (let dado of dados) {
 		if (dado.endereco.includes(cidadeInserida)) {
-			console.log("Nome:", dado.nome, "\nEndereço:", dado.endereco, "\nTelefone:", dado.telefone, "\nCapacidade:", dado.capacidade)		
+			console.log(`${dado.index} || Nome: ${dado.nome} || Endereço: ${dado.endereco} || Telefone: ${dado.telefone} || Capacidade: ${dado.capacidade}`)
+			aux++
 		}
+	}
+
+	if (aux == 0) {
+		console.log(`Não achamos nenhum abrigo nesta cidade`)
 	}
 }
 
