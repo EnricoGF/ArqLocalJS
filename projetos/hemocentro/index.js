@@ -2,12 +2,33 @@
 let continuar = true
 const dados = []
 let index = 0
+let cabecalho = {
+		index: "#",
+		nome: "Nome e sobrenome",
+		idade: "Idade",
+		peso: "Peso",
+		sangue: "Tipo",
+		doacao: "Última doação"
+	}
+
+//Função para formatar o retorno
+function formatar(objeto){
+	let string = ""
+		string += objeto.index + " | "
+		string += objeto.nome.padEnd(25, " ") + " | "
+		string += objeto.idade.toString().padEnd(5, " ") + " | "
+		string += objeto.peso.toString().padEnd(4, " ") + " | "
+		string += objeto.sangue.padEnd(4, " ") + " | "
+		string += objeto.doacao
+
+	return string
+}
 
 // Função para cadastro
 function cadastrar() {
 	let nomeUser = prompt("Qual o seu nome?").toUpperCase()
 	let idadeUser = Number(prompt("Qual a sua idade?"))
-	let pesoUser = Number(prompt("Qual o seu peso?"))
+	let pesoUser = Number(prompt("Qual o seu peso? Em kg"))
 	let sangueUser = prompt("Qual o seu tipo sanguíneo?").toUpperCase()
 	let doacaoUser = prompt("Quando foi sua última doação de sangue? DD/MM/AAAA")
 	index++
@@ -23,18 +44,22 @@ function cadastrar() {
 	dados.push(objeto)
 
 	console.log("----Dados cadastrados com sucesso----")
-	console.log(`${objeto.index} || Nome: ${objeto.nome} || Idade: ${objeto.idade} || Peso: ${objeto.peso} || Tipo sanguíneo: ${objeto.sangue} || Última doação: ${objeto.doacao}`)
+	console.log(`${objeto.index} | Nome: ${objeto.nome} | Idade: ${objeto.idade} | Peso: ${objeto.peso} | Tipo sanguíneo: ${objeto.sangue} | Última doação: ${objeto.doacao}`)
 }
 
 // Função para listar dados
 function listar() {
 	console.log("----Função listar doadores----")
 
-	for (let dado of dados) {
-		console.log(`${dado.index} || Nome: ${dado.nome} || Idade: ${dado.idade} || Peso: ${dado.peso} || Tipo sanguíneo: ${dado.sangue} || Última doação: ${dado.doacao}`)
+	if (index !== 0) {
+		console.log(formatar(cabecalho))
+			for (let dado of dados) {
+			console.log(formatar(dado))
+		}
 	}
+
 	if(index == 0){
-		console.log("Nenhum doador foi cadastrado ainda")
+		console.log("Nenhum doador foi cadastrado ainda.")
 	}
 }
 
@@ -43,12 +68,15 @@ function buscarTipo() {
 	let tipoInserido = prompt("Por que tipo sanguíneo gostaria de procurar?").toUpperCase()
 	let aux = 0
 
-	console.log(`----Função buscar tipo sanguíneo----\nBuscas para ${tipoInserido}\nResultados:`)
+	console.log(`----Função busca por tipo sanguíneo----\nBuscas para ${tipoInserido}\nResultados:`)
 
 	for (let dado of dados) {
 		if (dado.sangue == tipoInserido) {
-			console.log(`${dado.index} || Nome: ${dado.nome} || Idade: ${dado.idade} || Peso: ${dado.peso} || Tipo sanguíneo: ${dado.sangue} || Última doação: ${dado.doacao}`)
 			aux++
+			if(aux == 1){
+				console.log(formatar(cabecalho))
+			}
+			console.log(formatar(dado))
 		}
 	}
 	
@@ -62,12 +90,15 @@ function buscarData() {
 	let dataInserida = Number(prompt("Por que ano gostaria de procurar?"))
 	let aux = 0
 
-	console.log(`----Função buscar data----\nBuscas para ${dataInserida}\nResultados:`)
+	console.log(`----Função busca por data----\nBuscas para ${dataInserida}\nResultados:`)
 
 	for (let dado of dados) {
 		if (dado.doacao.includes(dataInserida)) {
-			console.log(`${dado.index} || Nome: ${dado.nome} || Idade: ${dado.idade} || Peso: ${dado.peso} || Tipo sanguíneo: ${dado.sangue} || Última doação: ${dado.doacao}`)
-		aux++
+			aux++
+			if(aux == 1){
+				console.log(formatar(cabecalho))
+			}
+			console.log(formatar(dado))
 		}
 	}
 
@@ -84,7 +115,7 @@ function sair() {
 
 //Função de resposta inválida
 function invalido() {
-	console.log("Opção inválida, tente novamente!")
+	console.log("Opção inválida, tente novamente.")
 }
 
 // Loop para perguntar ao usuário
