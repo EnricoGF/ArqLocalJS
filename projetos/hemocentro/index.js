@@ -29,8 +29,8 @@ function cadastrar() {
 	let nomeUser = prompt("Qual o seu nome?").toUpperCase()
 	let idadeUser = Number(prompt("Qual a sua idade?"))
 	let pesoUser = Number(prompt("Qual o seu peso? Em kg"))
-	let sangueUser = prompt("Qual o seu tipo sanguíneo?").toUpperCase()
-	let doacaoUser = prompt("Quando foi sua última doação de sangue? DD/MM/AAAA")
+	let sangueUser = prompt("Qual o seu tipo sanguíneo?").toUpperCase().trim()
+	let doacaoUser = prompt("Quando foi sua última doação de sangue? DD/MM/AAAA").trim()
 	index++
 
 	let objeto = {
