@@ -3,15 +3,15 @@ let continuar = true
 const dados = []
 let index = 0
 let cabecalho = {
-		index: "#",
-		nome: "Nome e sobrenome",
-		idade: "Idade",
-		peso: "Peso",
-		sangue: "Tipo",
-		doacao: "Última doação"
-	}
+	index: "#",
+	nome: "Nome e sobrenome",
+	idade: "Idade",
+	peso: "Peso",
+	sangue: "Tipo",
+	doacao: "Última doação"
+}
 
-//Função para formatar o retorno
+//Função para formatar o retorno no console
 function formatar(objeto){
 	let string = ""
 		string += objeto.index + " | "
@@ -24,7 +24,7 @@ function formatar(objeto){
 	return string
 }
 
-// Função para cadastro
+// Função para cadastro de usuário
 function cadastrar() {
 	let nomeUser = prompt("Qual o seu nome?").toUpperCase()
 	let idadeUser = Number(prompt("Qual a sua idade?"))
@@ -41,6 +41,8 @@ function cadastrar() {
 		sangue: sangueUser,
 		doacao: doacaoUser
 	}
+
+	//Inserindo dados cadastrados pelo usuário na array "dados"
 	dados.push(objeto)
 
 	console.log("----Dados cadastrados com sucesso----")
