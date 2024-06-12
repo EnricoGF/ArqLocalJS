@@ -55,7 +55,8 @@ function listar() {
 
 	if (index !== 0) {
 		console.log(formatar(cabecalho))
-			for (let dado of dados) {
+
+		for (let dado of dados) {
 			console.log(formatar(dado))
 		}
 	}
@@ -75,9 +76,11 @@ function buscarTipo() {
 	for (let dado of dados) {
 		if (dado.sangue == tipoInserido) {
 			aux++
-			if(aux == 1){
+
+			if (aux == 1) {
 				console.log(formatar(cabecalho))
 			}
+
 			console.log(formatar(dado))
 		}
 	}
@@ -97,9 +100,11 @@ function buscarData() {
 	for (let dado of dados) {
 		if (dado.doacao.includes(dataInserida)) {
 			aux++
-			if(aux == 1){
+
+			if (aux == 1) {
 				console.log(formatar(cabecalho))
 			}
+
 			console.log(formatar(dado))
 		}
 	}
