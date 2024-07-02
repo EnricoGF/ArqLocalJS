@@ -116,3 +116,4 @@ const novoObj = {
 }
 
 
+console.error(`Mensagem de erro`) // imprime mensagem de erro no sonsole
