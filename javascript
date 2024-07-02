@@ -69,6 +69,10 @@ const fraseSemEspaco = frase.trim() -> remove os espaços da frente e de tras da
 const pesquisaOie = frase.includes("Oie") -> true //pesquisa dentro da string
 const replaceOie = frase.replaceAll("Oie","tchau") -> tchauEeEee //troca o texto da string original para outro texto
 
+console.log("Enrico".charAt(2)) // n
+
+console.log("Enrico".indexOf(r)) // 3
+
 ///////////////////////////////arrays
 
 const lista = ["item 0", 42, variavel, true]
