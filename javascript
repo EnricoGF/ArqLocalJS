@@ -96,6 +96,8 @@ calculaArea(2, 3) //chamada da função, com argumentos
 	////////////////////////RETURN
 	return variavel -> retorna para função o valor atribuído à variável 
 
+setTimeout // chama função depois de tempo definido
+
 //////////////////////////////objeto
 
 const professor = {
